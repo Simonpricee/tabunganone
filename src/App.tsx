@@ -27,6 +27,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const appId = 'tabungan-royan-amanda'; 
+
 // Helper untuk format Rupiah
 const formatRupiah = (number) => {
   return new Intl.NumberFormat('id-ID', {
