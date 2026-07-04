@@ -16,12 +16,17 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, onSnapshot, doc, setDoc, deleteDoc, addDoc } from 'firebase/firestore';
 
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+const firebaseConfig = {
+  apiKey: "AIzaSyCKUpI8lAWath7bxEspcDcTaHX3hE-LXJM",
+  authDomain: "tabungan-bersama-6417c.firebaseapp.com",
+  projectId: "tabungan-bersama-6417c",
+  storageBucket: "tabungan-bersama-6417c.firebasestorage.app",
+  messagingSenderId: "422895359375",
+  appId: "1:422895359375:web:a31eb5a678d63116d6e7fa"
+};
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 // Helper untuk format Rupiah
 const formatRupiah = (number) => {
   return new Intl.NumberFormat('id-ID', {
